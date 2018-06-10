@@ -8,4 +8,10 @@
         SELECT * FROM USER WHERE id = #{id}
     </select>
 
+    <select id="getUserByNamePass" resultType="User" parameterType="User">
+        SELECT * from USER  WHERE username=#{username}
+    </select>
+    <select id="getUserByUsername" resultType="User" parameterType="string">
+        SELECT * from USER  WHERE username=#{username}
+    </select>
 </mapper>

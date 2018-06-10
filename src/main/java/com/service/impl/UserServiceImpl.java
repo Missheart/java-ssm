@@ -15,6 +15,8 @@ import com.entity.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.event.TransactionalEventListener;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -31,5 +33,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(long id) {
         return userMapper.getUserById(id);
+    }
+
+    @Override
+    public User getUserByNamePass(User user) {
+        return userMapper.getUserByNamePass(user);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return userMapper.getUserByUsername(username);
     }
 }
