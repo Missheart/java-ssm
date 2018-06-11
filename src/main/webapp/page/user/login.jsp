@@ -11,7 +11,7 @@
     <title>login</title>
 </head>
 <body>
-<form action="/ssmtest/user/login" method="post">
+<form action="/javassm/user/login" method="post">
     <input type="text" name="username">
     <input type="text" name="password">
     <input type="submit" name="登录">

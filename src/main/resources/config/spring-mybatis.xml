@@ -19,7 +19,7 @@
             <property name="password" value="${jdbc.password}"></property>
         </bean>
 
-    <!--sqlSessionFactory 对象的自动装配-->
+    <!--sqlSessionFactory 对象的自动装配 将spring和mybatis整合-->
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
             <!-- 注入数据库连接池 -->
             <property name="dataSource" ref="dataSource"></property>
@@ -27,6 +27,8 @@
             <property name="typeAliasesPackage" value="com.entity"></property>
             <!-- 扫描sql配置文件:mapper需要的xml文件 -->
             <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"></property>
+            <!--mybatis 全局配置文件-->
+            <property name="configLocation" value="classpath:config/mybatis.xml"></property>
         </bean>
 
     <!--mybatis接口文件的自动扫描，装配-->
